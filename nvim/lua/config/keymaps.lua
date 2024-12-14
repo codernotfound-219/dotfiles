@@ -17,6 +17,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader>y", "\"+y", {desc = "Copy to clipboard"})
 vim.keymap.set("v", "<leader>y", "\"+y", {desc = "Copy to clipboard"})
 
+-- PASTING
+vim.keymap.set("n", "<leader>p", "\"_dP")
+
 -- FORMATTER
 vim.keymap.set("n", "<leader>f", function()
   vim.lsp.buf.format()
