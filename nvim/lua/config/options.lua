@@ -15,15 +15,19 @@ vim.opt.autoindent = true -- auto-indent based on current line
 
 vim.opt.wrap = false
 
+-- UNDO TREE BACKUPS
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
 -- search settings
 vim.opt.ignorecase = true --ignore case
 vim.opt.smartcase = true -- mixedcase = case-sensitive
-
+vim.opt.incsearch = true
 vim.opt.cursorline = true
 
 -- turn on termguicolors
--- using iterm
---
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 vim.opt.signcolumn = "yes" -- show sign column so text doesnt shift
