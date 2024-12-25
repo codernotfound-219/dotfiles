@@ -60,7 +60,7 @@ disabled = true
 [package]
 symbol = '󰏗 '
 style = 'bold blue'
-version_format = '${raw}'
+version_format = '${raw} '
 format = '[$symbol$version]($style)'
 
 # NOTIFICATIONS
