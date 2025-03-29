@@ -15,7 +15,8 @@ return {
     -- ADD LSP SERVERS AS REQUIRED
     local servers = {
       clangd = {},
-
+      eslint = {},
+      ts_ls = {},
       lua_ls = {
         settings = {
           Lua = {
@@ -45,6 +46,8 @@ return {
 
     require("mason-lspconfig").setup({
       ensure_installed = {
+        "eslint",
+        "ts_ls",
         "lua_ls",
         "clangd",
         "rust_analyzer",
