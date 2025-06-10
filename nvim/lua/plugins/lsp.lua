@@ -30,15 +30,6 @@ return {
           },
         },
       },
-      rust_analyzer = {
-        cargo = {
-          allFeatures = true,
-          loadOutDirsFromCheck = true,
-          buildScripts = {
-            enable = true,
-          },
-        },
-      },
     }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
