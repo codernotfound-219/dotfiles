@@ -1,6 +1,5 @@
 .DS_Store
 .git/
-zsh-plugins/
 raycast/
 configstore/
 flutter/
