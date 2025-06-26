@@ -10,12 +10,12 @@ return {
       enabled = true,
       timeout = 3000,
     },
-    explorer = {
-      enabled = true,
-      auto_close = true,
-      focues = "input",
-      jump = { close = true },
-    },
+    -- explorer = {
+    --   enabled = true,
+    --   auto_close = true,
+    --   focues = "input",
+    --   jump = { close = true },
+    -- },
     picker = {
       sources = {
         explorer = {
@@ -33,7 +33,7 @@ return {
     }
   },
   keys = {
-    { "<leader>e",  function() Snacks.explorer() end,                desc = "File Explorer" },
+    -- { "<leader>e",  function() Snacks.explorer() end,                desc = "File Explorer" },
     { "<leader>.",  function() Snacks.scratch() end,                 desc = "Toggle Scratch Buffer" },
     { "<leader>S",  function() Snacks.scratch.select() end,          desc = "Select Scratch Buffer" },
     { "<leader>n",  function() Snacks.notifier.show_history() end,   desc = "Notification History" },
