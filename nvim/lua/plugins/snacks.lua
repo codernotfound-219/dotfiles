@@ -1,10 +1,48 @@
+local dashboard_sections = {
+  { section = "header", },
+  { section = "keys",   gap = 1, padding = 1 },
+  {
+    section = "startup",
+    padding = 4,
+  },
+  function()
+    local in_git = Snacks.git.get_root() ~= nil
+    local cmds = {
+      {
+        pane = 2,
+        cmd = 'cmatrix -Bu 6 -C green',
+        padding = 2,
+        height = 6,
+      },
+      {
+        pane = 2,
+        icon = " ",
+        title = "Git Status",
+        cmd = "git --no-pager diff --stat -B -M -C",
+        height = 10,
+      },
+    }
+    return vim.tbl_map(function(cmd)
+      return vim.tbl_extend("force", {
+        section = "terminal",
+        enabled = in_git,
+        padding = 1,
+        ttl = 5 * 60,
+        indent = 3,
+      }, cmd)
+    end, cmds)
+  end,
+}
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = {
+      sections = dashboard_sections
+    },
     input = { enabled = true },
     notifier = {
       enabled = true,
