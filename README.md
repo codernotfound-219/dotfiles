@@ -1,4 +1,5 @@
 # DOTFILES
 
 ## LOCATIONS
-.tmux.conf&emsp;&emsp;=> should be placed in home folder (tmux source)
+`tmux/.tmux.conf`   => symlink to ~/.tmux.conf
+`zsh/.zshrc`        => symlink to ~/.zshrc
