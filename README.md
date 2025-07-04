@@ -122,5 +122,4 @@ Each tool's configuration is modular and can be customized independently:
 ## 📝 Notes
 
 - Some paths may need adjustment for your system
-- The debug configuration contains a personal path that should be updated
 - Plugins and tools may require additional setup on first run
