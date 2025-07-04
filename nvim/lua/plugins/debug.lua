@@ -40,7 +40,7 @@ return {
       port = "${port}",
       executable = {
         -- CHANGE THIS to your path!
-        command = "/Users/aswatt/codelldb/extension/adapter/codelldb",
+        command = vim.fn.expand("~/codelldb/extension/adapter/codelldb"),
         args = { "--port", "${port}" },
 
         -- On windows you may have to uncomment this:

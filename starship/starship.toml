@@ -69,12 +69,3 @@ symbol = '󰏗 '
 style = 'bold blue'
 version_format = '${raw} '
 format = '[$symbol$version]($style) '
-
-# NOTIFICATIONS
-# NOTE: Uses raycast snippets
-# [custom.conda]
-# command = 'echo ";conda"'
-# detect_extensions = ['py']
-# when = ''' test /Users/aswatt/Development/Python = "$PWD" '''
-# format = ' run [$output]($style) '
-

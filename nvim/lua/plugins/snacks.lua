@@ -5,15 +5,25 @@ local dashboard_sections = {
     section = "startup",
     padding = 4,
   },
+  {
+    pane = 2,
+    icon = " ",
+    desc = "Browse Repo",
+    padding = 1,
+    key = "b",
+    action = function()
+      Snacks.gitbrowse()
+    end,
+  },
   function()
     local in_git = Snacks.git.get_root() ~= nil
     local cmds = {
-      {
-        pane = 2,
-        cmd = 'cmatrix -Bu 6 -C green',
-        padding = 2,
-        height = 6,
-      },
+      -- {
+      --   pane = 2,
+      --   cmd = 'cmatrix -Bu 6 -C green',
+      --   padding = 2,
+      --   height = 6,
+      -- },
       {
         pane = 2,
         icon = " ",
