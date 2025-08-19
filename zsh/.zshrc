@@ -18,6 +18,7 @@ eval "$(zoxide init zsh)"
 
 # PATHS
 export PATH="$PATH:$Home/Flutterdev/flutter/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # export PATH="$PATH:$HOME/miniforge3/bin/conda"
 
@@ -122,7 +123,7 @@ alias session='sesh connect "$(sesh list -i | gum filter --limit 1 --placeholder
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-
+#
 # __conda_setup="$('$HOME/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
 #     eval "$__conda_setup"
