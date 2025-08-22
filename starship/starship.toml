@@ -62,6 +62,11 @@ symbol = ' '
 version_format = '${raw}'
 format = '[$symbol($version )]($style) '
 
+[vlang]
+symbol = ' '
+version_format = '${raw}'
+format = '[$symbol($version )]($style) '
+
 [nodejs]
 symbol = '' 
 style = 'bold green'
