@@ -18,7 +18,17 @@ eval "$(zoxide init zsh)"
 
 # PATHS
 export PATH="$PATH:$Home/Flutterdev/flutter/bin"
+export PATH="$PATH:/opt/homebrew/opt/bison/bin"
+export PATH="$PATH:/opt/homebrew/opt/flex/bin"
+export PATH="$PATH:/opt/homebrew/opt/verilator/bin"
 export PATH="$PATH:$HOME/go/bin"
+export SYSTEMC_HOME="/opt/homebrew/opt/systemc"
+
+# LDFLAGS
+export LDFLAGS="-L/opt/homebrew/opt/bison/lib $LDFLAGS"
+export LDFLAGS="-L/opt/homebrew/opt/flex/lib $LDFLAGS"
+export CFLAGS="-L/opt/homebrew/opt/flex/include $CFLAGS"
+export CXXFLAGS="-L/opt/homebrew/opt/flex/include $CXXFLAGS"
 
 # export PATH="$PATH:$HOME/miniforge3/bin/conda"
 

@@ -15,6 +15,7 @@ return {
 
     vim.lsp.enable("lua_ls")
     vim.lsp.enable("asm_lsp")
+    vim.lsp.enable("verible")
     vim.lsp.enable("clangd")
     vim.lsp.enable("eslint")
     vim.lsp.enable("ts_ls")
