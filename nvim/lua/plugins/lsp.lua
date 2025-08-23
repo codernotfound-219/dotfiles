@@ -14,12 +14,18 @@ return {
     require("mason-lspconfig").setup()
 
     vim.lsp.enable("lua_ls")
-    vim.lsp.enable("asm_lsp")
     vim.lsp.enable("verible")
     vim.lsp.enable("clangd")
     vim.lsp.enable("eslint")
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("rust_analyzer")
+
+    require('lspconfig').asm_lsp.setup {
+      cmd = { "asm-lsp" },    -- Manually set to the binary if needed, e.g. "/Users/youruser/.cargo/bin/asm-lsp"
+      filetypes = { "asm", "s" }, -- Add other filetypes if you need
+      root_dir = require("lspconfig.util").root_pattern(".asm-lsp.toml", ".git", "."),
+      -- any additional options/config...
+    }
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     vim.lsp.config('*', {
