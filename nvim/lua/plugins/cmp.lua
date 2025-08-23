@@ -12,7 +12,7 @@ return {
       -- install jsregexp (optional!).
       build = "make install_jsregexp"
     },
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
+    "saadparwaiz1/cmp_luasnip",     -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
   },
 
@@ -74,8 +74,8 @@ return {
       sources = cmp.config.sources({
         { name = 'path' }
       }, {
-          { name = 'cmdline' }
-        }),
+        { name = 'cmdline' }
+      }),
       matching = { disallow_symbol_nonprefix_matching = false }
     })
   end
