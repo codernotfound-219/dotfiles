@@ -91,6 +91,9 @@ eval "$(gh copilot alias -- zsh)"
 alias cs='ghcs'
 alias ce='ghce'
 
+# esp-idf
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
 # CD
 alias ..='cd ../'
 alias ...='cd ../../'
