@@ -22,6 +22,7 @@ export PATH="$PATH:/opt/homebrew/opt/bison/bin"
 export PATH="$PATH:/opt/homebrew/opt/flex/bin"
 export PATH="$PATH:/opt/homebrew/opt/verilator/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:/usr/local/mysql-commercial-9.5.0-macos15-arm64/bin"
 export SYSTEMC_HOME="/opt/homebrew/opt/systemc"
 
 # LDFLAGS
