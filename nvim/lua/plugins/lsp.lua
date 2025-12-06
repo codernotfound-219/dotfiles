@@ -13,25 +13,40 @@ return {
     require("mason").setup()
     require("mason-lspconfig").setup()
 
-    vim.lsp.enable("lua_ls")
-    vim.lsp.enable("verible")
-    vim.lsp.enable("clangd")
-    vim.lsp.enable("eslint")
-    vim.lsp.enable("ts_ls")
-    vim.lsp.enable("rust_analyzer")
-
-    require('lspconfig').asm_lsp.setup {
-      cmd = { "asm-lsp" },    -- Manually set to the binary if needed, e.g. "/Users/youruser/.cargo/bin/asm-lsp"
-      filetypes = { "asm", "s" }, -- Add other filetypes if you need
-      root_dir = require("lspconfig.util").root_pattern(".asm-lsp.toml", ".git", "."),
-      -- any additional options/config...
-    }
-
+    -- 1. Define Common Capabilities (for nvim-cmp)
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    -- 2. Apply capabilities to all servers by default (Native 0.11 feature)
     vim.lsp.config('*', {
       capabilities = capabilities,
     })
 
+    -- 3. Configure asm_lsp (Replaces the deprecated require('lspconfig') setup)
+    -- Since you work with 8086/Assembly, this ensures the correct filetypes and root detection.
+    vim.lsp.config.asm_lsp = {
+      cmd = { "asm-lsp" },
+      filetypes = { "asm", "s" },
+      -- In Nvim 0.11, use 'root_markers' instead of 'root_dir = util.root_pattern'
+      root_markers = { ".asm-lsp.toml", ".git" }, 
+    }
+
+    -- 4. Enable Servers
+    -- Using a list makes this easier to manage
+    local servers = {
+      "lua_ls",
+      "verible",
+      "clangd",     -- Important for your C++ algorithms
+      "eslint",
+      "ts_ls",
+      "rust_analyzer",
+      "asm_lsp"     -- Explicitly enable asm_lsp after configuring it above
+    }
+
+    for _, server in ipairs(servers) do
+      vim.lsp.enable(server)
+    end
+
+    -- 5. LspAttach Keymaps
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
@@ -55,6 +70,14 @@ return {
         map(']d', vim.diagnostic.goto_next, 'next diagnostic')
       end,
     })
-    require("lspconfig.ui.windows").default_options.border = "single"
+    
+    -- Optional: Configure border globally for floating windows
+    -- (The old require("lspconfig.ui.windows") is also deprecated)
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or "single"
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
   end
 }

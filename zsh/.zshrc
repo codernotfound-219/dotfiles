@@ -16,6 +16,9 @@ eval "$(zoxide init zsh)"
 # VS code command for 'code .'
  code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
+# Opts
+setopt HIST_IGNORE_SPACE
+
 # PATHS
 export PATH="$PATH:$Home/Flutterdev/flutter/bin"
 export PATH="$PATH:/opt/homebrew/opt/bison/bin"
