@@ -21,7 +21,6 @@ return {
         'jdtls', -- This ensures it gets downloaded to the mason directory
         'lua_ls',
         'clangd',
-        'asm-lsp',
       },
       run_on_start = true,
     })
