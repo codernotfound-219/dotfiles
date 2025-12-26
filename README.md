@@ -68,6 +68,7 @@ Enhanced shell with plugins and custom configuration
 - **Git TUI**: lazygit
 - **Fuzzy Finder**: fzf integration
 - **Directory Jumper**: zoxide
+- **Note-Taking**: Obsidian with preferred theme and configuration
 
 ## 📁 Installation
 
