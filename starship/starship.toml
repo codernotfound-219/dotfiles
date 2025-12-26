@@ -69,6 +69,7 @@ format = '[$symbol($version )]($style) '
 
 [java]
 symbol = ' '
+style = 'bold red'
 version_format = '${raw}'
 format = '[$symbol($version )]($style) '
 
