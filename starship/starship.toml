@@ -67,6 +67,11 @@ symbol = ' '
 version_format = '${raw}'
 format = '[$symbol($version )]($style) '
 
+[java]
+symbol = ' '
+version_format = '${raw}'
+format = '[$symbol($version )]($style) '
+
 [nodejs]
 symbol = '' 
 style = 'bold green'
