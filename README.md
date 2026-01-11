@@ -82,6 +82,34 @@ Enhanced shell with plugins and custom configuration
 - **Directory Jumper**: zoxide
 - **Note-Taking**: Obsidian
 
+## 📦 Prerequisites
+
+Before installing, ensure you have the following dependencies. Using [Homebrew](https://brew.sh/) is recommended for macOS.
+
+### **Core**
+- **[Neovim](https://neovim.io/)** (v0.9+): `brew install neovim`
+- **[Tmux](https://github.com/tmux/tmux)** (v3.2+): `brew install tmux`
+- **[Ghostty](https://ghostty.org/)** (Recommended Terminal): `brew install ghostty`
+
+### **CLI Utilities**
+- **[Starship](https://starship.rs/)**: `brew install starship`
+- **[Zoxide](https://github.com/ajeetdsouza/zoxide)**: `brew install zoxide`
+- **[Fzf](https://github.com/junegunn/fzf)**: `brew install fzf`
+- **[Bat](https://github.com/sharkdp/bat)**: `brew install bat`
+- **[Yazi](https://github.com/sxyazi/yazi)**: `brew install yazi`
+- **[Lazygit](https://github.com/jesseduffield/lazygit)**: `brew install lazygit`
+- **[Btop](https://github.com/aristocratos/btop)**: `brew install btop`
+- **[Ripgrep](https://github.com/BurntSushi/ripgrep)**: `brew install ripgrep` (Required for Telescope)
+- **[Fd](https://github.com/sharkdp/fd)**: `brew install fd` (Required for Telescope)
+
+### **Session Management**
+- **[Sesh](https://github.com/joshmedeski/sesh)**: `brew install joshmedeski/sesh/sesh`
+- **[Gum](https://github.com/charmbracelet/gum)**: `brew install gum`
+
+### **Fonts**
+- **[Nerd Fonts](https://www.nerdfonts.com/)**: Required for icons.
+  - Recommended: **Lilex Nerd Font** or **JetBrains Mono Nerd Font**.
+
 ## 📁 Installation
 
 1. Clone this repository to `~/.config`:
@@ -99,11 +127,11 @@ Enhanced shell with plugins and custom configuration
     toggle
 
 ## 🎯 Key Features
-**Dynamic Theming**: Instant toggle between vibrant and minimal aesthetics.
-**Consistent UI**: All tools (Tmux, Neovim, Terminal, Prompt) stay in sync.
-**Vim-style Navigation**: Consistent keybindings across terminal, editor, and multiplexer.
-**Performance Optimized**: Fast shell startup and responsive tools.
+- **Dynamic Theming**: Instant toggle between vibrant and minimal aesthetics.
+- **Consistent UI**: All tools (Tmux, Neovim, Terminal, Prompt) stay in sync.
+- **Vim-style Navigation**: Consistent keybindings across terminal, editor, and multiplexer.
+- **Performance Optimized**: Fast shell startup and responsive tools.
 
 ## 🔧 Customization
-**Tmux Themes**: Edit tmux/poimandres.conf or tmux/catppuccin.conf.
-**Toggle Logic**: Modify scripts/toggle_theme.sh.
+- **Tmux Themes**: Edit tmux/poimandres.conf or tmux/catppuccin.conf.
+- **Toggle Logic**: Modify scripts/toggle_theme.sh.
