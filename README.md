@@ -115,16 +115,19 @@ Before installing, ensure you have the following dependencies. Using [Homebrew](
 1. Clone this repository to `~/.config`:
    ```zsh
    git clone https://github.com/codernotfound-219/dotfiles.git ~/.config
+   ```
 
 2. Create necessary symlinks:
     ```zsh
     ln -sf ~/.config/tmux/.tmux.conf ~/.tmux.conf
     ln -sf ~/.config/zsh/.zshrc ~/.zshrc
+   ```
 
 3. Initialize Theme System:
     ```zsh
     chmod +x ~/.config/scripts/toggle_theme.sh
     toggle
+   ```
 
 ## 🎯 Key Features
 - **Dynamic Theming**: Instant toggle between vibrant and minimal aesthetics.
