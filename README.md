@@ -2,11 +2,20 @@
 
 Personal configuration files for macOS development environment.
 
+## 🎨 Themes
+
+### **Dual Theme System**
+- **Themes**:
+  - **Catppuccin Mocha**: High-contrast, vibrant pastel theme.
+  - **Poimandres**: Minimal, deep sea/dark blue theme (`#1b1e28` background).
+- **Toggle Mechanism**: Instantly switch Ghostty, Tmux, Neovim, and Starship via a single command.
+- **Command**: `toggle` (alias for `~/.config/scripts/toggle_theme.sh`).
+
 ## 🖥️ Terminal
 
 ### **Ghostty**
 Modern, fast GPU-accelerated terminal emulator
-- **Theme**: Catppuccin Mocha
+- **Themes**: Catppuccin Mocha / Poimandres (Custom Port)
 - **Font**: Lilex Nerd Font (17pt)
 - **Features**: 90% background opacity, hidden titlebar, custom padding
 - **Config**: [`ghostty/config`](ghostty/config)
@@ -16,7 +25,7 @@ Modern, fast GPU-accelerated terminal emulator
 ### **Neovim**
 Highly customizable text editor with extensive plugin ecosystem
 - **Plugin Manager**: [lazy.nvim](https://github.com/folke/lazy.nvim)
-- **Theme**: Catppuccin Mocha with transparency
+- **Themes**: Catppuccin Mocha & Poimandres (Auto-detects from state file)
 - **Key Features**:
   - LSP support (Rust, C++, TypeScript, Lua)
   - Autocompletion with nvim-cmp
@@ -32,19 +41,22 @@ Highly customizable text editor with extensive plugin ecosystem
 Fast, customizable shell prompt
 - **Layout**: Minimal left prompt with git info, detailed right prompt
 - **Features**: Command duration, git status, language-specific indicators
-- **Config**: [`starship/starship.toml`](starship/starship.toml)
+- **Config**: [`starship/starship.toml`](starship/starship.toml) (Symlinked to active theme)
 
 ## 🔧 Terminal Multiplexer
 
 ### **Tmux**
 Terminal multiplexer for managing multiple sessions
 - **Prefix**: `Ctrl+S` (instead of default `Ctrl+B`)
+- **Structure**:
+  - Main config: `tmux/.tmux.conf`
+  - Theme configs: `tmux/catppuccin.conf`, `tmux/poimandres.conf`
 - **Features**:
+  - Minimal top bar (Session Name | Windows | Time)
+  - Zoom indicator (Pink/Peach depending on theme)
   - Vim-style navigation
-  - Session management with sesh
-  - Plugin ecosystem (TPM, Catppuccin theme)
+  - Session management with *sesh* (Theme-aware gum popup)
   - Vim-tmux navigator integration
-- **Config**: [`tmux/.tmux.conf`](tmux/.tmux.conf)
 
 ## 🐚 Shell
 
@@ -63,64 +75,15 @@ Enhanced shell with plugins and custom configuration
 
 ## 🛠️ Additional Tools
 
-- **File Manager**: Yazi with git integration and catppuccin theme
+- **File Manager**: Yazi
 - **System Monitor**: btop
 - **Git TUI**: lazygit
 - **Fuzzy Finder**: fzf integration
 - **Directory Jumper**: zoxide
-- **Note-Taking**: Obsidian with preferred theme and configuration
+- **Note-Taking**: Obsidian
 
 ## 📁 Installation
 
 1. Clone this repository to `~/.config`:
    ```zsh
    git clone https://github.com/codernotfound-219/dotfiles.git ~/.config
-   ```
-
-2. Create necessary symlinks:
-   ```zsh
-   ln -sf ~/.config/tmux/.tmux.conf ~/.tmux.conf
-   ln -sf ~/.config/zsh/.zshrc ~/.zshrc
-   ```
-
-3. Install dependencies:
-   ```zsh
-   # Install Homebrew if not already installed
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   
-   # Install essential tools
-   brew install neovim tmux starship zoxide yazi eza bat fzf lazygit btop gh
-   ```
-
-4. Install Tmux Plugin Manager:
-   ```zsh
-   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-   ```
-
-5. Reload configurations:
-   ```zsh
-   source ~/.zshrc
-   tmux source ~/.tmux.conf
-   ```
-
-## 🎯 Key Features
-
-- **Consistent Theming**: Catppuccin Mocha across all applications
-- **Vim-style Navigation**: Consistent keybindings across terminal, editor, and multiplexer
-- **Git Integration**: Visual git status in file managers and prompts
-- **Performance Optimized**: Fast shell startup and responsive tools
-- **Modern Tools**: Latest generation of CLI tools (eza, bat, yazi, etc.)
-
-## 🔧 Customization
-
-Each tool's configuration is modular and can be customized independently:
-
-- **Neovim**: Modify plugins in [`nvim/lua/plugins/`](nvim/lua/plugins/)
-- **Tmux**: Edit [`tmux/.tmux.conf`](tmux/.tmux.conf)
-- **Zsh**: Update [`zsh/.zshrc`](zsh/.zshrc)
-- **Starship**: Customize [`starship/starship.toml`](starship/starship.toml)
-
-## 📝 Notes
-
-- Some paths may need adjustment for your system
-- Plugins and tools may require additional setup on first run
