@@ -87,3 +87,23 @@ Enhanced shell with plugins and custom configuration
 1. Clone this repository to `~/.config`:
    ```zsh
    git clone https://github.com/codernotfound-219/dotfiles.git ~/.config
+
+2. Create necessary symlinks:
+    ```zsh
+    ln -sf ~/.config/tmux/.tmux.conf ~/.tmux.conf
+    ln -sf ~/.config/zsh/.zshrc ~/.zshrc
+
+3. Initialize Theme System:
+    ```zsh
+    chmod +x ~/.config/scripts/toggle_theme.sh
+    toggle
+
+## 🎯 Key Features
+**Dynamic Theming**: Instant toggle between vibrant and minimal aesthetics.
+**Consistent UI**: All tools (Tmux, Neovim, Terminal, Prompt) stay in sync.
+**Vim-style Navigation**: Consistent keybindings across terminal, editor, and multiplexer.
+**Performance Optimized**: Fast shell startup and responsive tools.
+
+## 🔧 Customization
+**Tmux Themes**: Edit tmux/poimandres.conf or tmux/catppuccin.conf.
+**Toggle Logic**: Modify scripts/toggle_theme.sh.
