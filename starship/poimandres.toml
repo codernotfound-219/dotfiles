@@ -22,19 +22,65 @@ format = '[$symbol$branch(:$remote_branch)]($style) '
 style = 'bold #f087bd'
 format = '[$all_status$ahead_behind]($style) '
 
+[git_metrics]
+disabled = true
+
 [character]
 success_symbol = '[❯](#5de4c7)'
 error_symbol = '[❯](#f087bd)'
 
-[c]
+[cmake]
 symbol = ' '
-style = 'bold #add7ff'
-[nodejs]
-symbol = ' '
-style = 'bold #5de4c7'
+version_format = '${raw}'
+format = '[$symbol($version )]($style) '
+
+[conda]
+symbol = ' '
+style = 'bold blue'
+ignore_base = false
+format = '[$symbol$environment]($style) '
+
+[python]
+disabled = true
+
+[lua]
+symbol = ' '
+format = '[$symbol($version )]($style) '
+disabled = true
+
 [rust]
 symbol = '󱘗'
-style = 'bold #add7ff'
+style = 'bold blue'
+version_format = '${raw}'
+format = '[$symbol ($version)]($style) '
+disabled = true
+
+[c]
+symbol = ' '
+version_format = '${raw}'
+format = '[$symbol($version )]($style) '
+
+[vlang]
+symbol = ' '
+version_format = '${raw}'
+format = '[$symbol($version )]($style) '
+
+[java]
+symbol = ' '
+style = 'bold red'
+version_format = '${raw}'
+format = '[$symbol($version )]($style) '
+
+[nodejs]
+symbol = '' 
+style = 'bold green'
+version_format = '${raw}'
+format = '[$symbol ($version)]($style) '
+disabled = false
+
 [package]
 symbol = '󰏗 '
-style = 'bold #5de4c7'
+style = 'bold blue'
+version_format = '${raw} '
+format = '[$symbol$version]($style) '
+
