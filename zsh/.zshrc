@@ -118,6 +118,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias top='btop'
 alias htop='btop'
+alias toggle='~/.config/scripts/toggle_theme.sh'
 
 # Sesh
 alias session='sesh connect "$(sesh list -i | gum filter --limit 1 --placeholder "PICK A SESH" --prompt="⚡")"'

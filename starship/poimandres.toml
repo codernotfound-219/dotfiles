@@ -1,0 +1,40 @@
+add_newline = false
+
+format = """$directory$git_branch$git_status$character"""
+right_format = """$all"""
+
+[directory]
+truncation_length = 8
+truncation_symbol = '…/'
+style = 'bold #add7ff'
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[cmd_duration]
+style = 'bold #f087bd'
+format = '[$duration]($style) '
+
+[git_branch]
+symbol = ' '
+style = 'bold #5de4c7'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+style = 'bold #f087bd'
+format = '[$all_status$ahead_behind]($style) '
+
+[character]
+success_symbol = '[❯](#5de4c7)'
+error_symbol = '[❯](#f087bd)'
+
+[c]
+symbol = ' '
+style = 'bold #add7ff'
+[nodejs]
+symbol = ' '
+style = 'bold #5de4c7'
+[rust]
+symbol = '󱘗'
+style = 'bold #add7ff'
+[package]
+symbol = '󰏗 '
+style = 'bold #5de4c7'
