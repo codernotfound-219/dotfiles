@@ -1,6 +1,15 @@
+local theme_file = os.getenv("HOME") .. "/.config/current_theme"
+local f = io.open(theme_file, "r")
+local theme = "catppuccin"
+
+if f then
+    theme = f:read("*l") or "catppuccin"
+    f:close()
+end
+
 require('lualine').setup {
   options = {
-    { theme = 'catppuccin' },
+    theme = theme,
   },
   sections = {
     lualine_x = {
