@@ -35,7 +35,10 @@ else
     sed -i '' 's/^theme = .*/theme = poimandres/' "$CONFIG_DIR/ghostty/config"
 fi
 
-# 4. Reload Ghostty (Send Cmd+Shift+,)
+# 4. Update Yazi (theme.toml selects flavor)
+ln -sf "$CONFIG_DIR/yazi/$NEW.toml" "$CONFIG_DIR/yazi/theme.toml"
+
+# 5. Reload Ghostty (Send Cmd+Shift+,)
 osascript -e '
 tell application "Ghostty"
     activate
