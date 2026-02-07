@@ -60,25 +60,25 @@ return {
 
     --Bug: very stupid solution, but it works. (Fix for double-client in jdtls)
     -- Stop the unwanted lspconfig-started jdtls client (cmd is a function in your :LspInfo).
-    local kill_group = vim.api.nvim_create_augroup("KillLspconfigJdtls", { clear = true })
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = kill_group,
-      callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if not client or client.name ~= "jdtls" then
-          return
-        end
-
-        -- nvim-lspconfig's jdtls shows cmd as a function; nvim-jdtls uses an argv table.
-        if type(client.config.cmd) == "function" then
-          -- defer so we don't fight attach flow
-          vim.schedule(function()
-            pcall(vim.lsp.stop_client, client.id)
-          end)
-        end
-      end,
-    })
-
+    -- local kill_group = vim.api.nvim_create_augroup("KillLspconfigJdtls", { clear = true })
+    -- vim.api.nvim_create_autocmd("LspAttach", {
+    --   group = kill_group,
+    --   callback = function(ev)
+    --     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    --     if not client or client.name ~= "jdtls" then
+    --       return
+    --     end
+    --
+    --     -- nvim-lspconfig's jdtls shows cmd as a function; nvim-jdtls uses an argv table.
+    --     if type(client.config.cmd) == "function" then
+    --       -- defer so we don't fight attach flow
+    --       vim.schedule(function()
+    --         pcall(vim.lsp.stop_client, client.id)
+    --       end)
+    --     end
+    --   end,
+    -- })
+    --
     -- 5. LspAttach Keymaps
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),

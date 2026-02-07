@@ -1,0 +1,62 @@
+" --- GENERAL SETTINGS ---
+set relativenumber
+set number
+set ideajoin
+set ignorecase
+set smartcase
+set incsearch
+set handler+=<C-d>:<Action>(EditorScrollDownAndCenter)
+set handler+=<C-u>:<Action>(EditorScrollUpAndCenter)
+
+" --- LEADER KEY ---
+let mapleader=" "
+
+" --- NAVIGATION & CENTERING ---
+" Mimicking your <C-d>zz, {zz, nzz logic
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap { {zz
+nnoremap } }zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" --- VISUAL MODE MOTIONS ---
+" Move selected lines up/down with J and K
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" --- CLIPBOARD & PASTING ---
+" Copy to system clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+" Paste without overwriting register
+vnoremap <leader>p "_dP
+
+" --- UI & OVERRIDES ---
+" The 'Disgusting' C-c fix
+inoremap <C-c> <Esc>
+nnoremap <C-z> <Nop>
+" Clear search highlights
+nnoremap <leader>h :nohlsearch<CR>
+
+" --- INTELLIJ SPECIFIC ACTIONS (The 'SDE' Level) ---
+" Toggle Project View (equivalent to your netrw <leader>e)
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+
+" Format Document (Your <leader>f)
+nnoremap <leader>f :action ReformatCode<CR>
+
+" LSP/IDE Features (Essential for Java)
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gr :action FindUsages<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+
+" Diagnostics (Equivalent to your float diagnostic config)
+nnoremap [d :action GotoPreviousError<CR>
+nnoremap ]d :action GotoNextError<CR>
