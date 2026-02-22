@@ -42,6 +42,14 @@ return {
       root_markers = { ".asm-lsp.toml", ".git" },
     }
 
+    -- configure Clangd for ESP-IDF cross-compilation
+    vim.lsp.config.clangd = {
+      cmd = {
+        "clangd",
+        "--query-driver=**/*gcc*,**/*g++*"
+      },
+    }
+
     -- 4. Enable Servers
     -- Using a list makes this easier to manage
     local servers = {
