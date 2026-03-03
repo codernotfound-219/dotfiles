@@ -49,7 +49,7 @@ return {
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-y>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<C-m>'] = faster_confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<C-m>'] = faster_confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
 
       sources = cmp.config.sources({
